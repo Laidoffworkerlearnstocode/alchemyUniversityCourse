@@ -34,6 +34,17 @@ class MerkleTree {
             return this.getRoot();
         }
     }
+
+    getProof(leaf) {
+        let proof = [];
+        const index = this.leaves.indexOf(leaf);
+        let remainer = index % 2;
+        if (index === -1) {
+            throw new Error('Leaf not in tree');
+        } else {
+            
+        }
+    }
 }
 
 module.exports = MerkleTree;
