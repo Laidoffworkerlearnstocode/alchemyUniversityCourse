@@ -10,10 +10,12 @@
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {
+		"alchemy-sdk": "^2.9.1",
 		"axios": "^1.4.0",
 		"crypto-js": "^4.1.1",
 		"dotenv": "^16.3.1",
 		"ethereum-cryptography": "^2.0.0",
+		"ethers": "^6.6.2",
 		"solint": "^0.0.1"
 	}
 }
