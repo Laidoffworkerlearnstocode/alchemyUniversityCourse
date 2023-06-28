@@ -3,6 +3,7 @@ const { ganacheProvider } = require('./config');
 
 const provider = new providers.Web3Provider(ganacheProvider);
 
+//hints: provider.getBlockWithTransactions(block)
 /**
  * Given an ethereum address find all the addresses
  * that were sent ether from that address
