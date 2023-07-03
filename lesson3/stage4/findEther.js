@@ -12,7 +12,19 @@ const provider = new providers.Web3Provider(ganacheProvider);
  * @returns {Array} all the addresses that received ether
  */
 async function findEther(address) {
-    
+    const recipients = [];
+    const blockNumber = await provider.getBlockNumber();
+    for (let i = 0; i < blockNumber + 1; i++) {
+        const block = await provider.getBlockWithTransactions(i);
+        const transactions = block.transactions;
+        for (let j = 0; j < transactions.length; j++) {
+            const transaction = transactions[j];
+            if (transaction.from === address) {
+                recipients.push(transaction.to);
+            }
+        }
+    }
+    return recipients;
 }
 
-module.exports = findEther;
+module.exports = findEther; 
